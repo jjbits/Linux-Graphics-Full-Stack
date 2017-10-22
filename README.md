@@ -2,7 +2,7 @@
 
 Hi There, 
 
-Here I am showing how to get and build the major Linux graphics software components. If you've wondered and wanted know more about mordern graphics software stack, you've come to the right place. :) Along the way, hopefully I can throw some deep details on modern graphics technologies, which are normally hard to come by.  I use mostly Ubuntu so these are based on Ubuntu packages. Also the examples used here are mostly based on the bleeding edge versions, so please keep it in your mind so. I am using Intel Nuc with Kaby Lake for the hardware. Enjoy!
+Here I am showing how to get and build the major Linux graphics software components. If you've wondered and wanted know more about modern graphics software stack, you've come to the right place. :) Along the way, hopefully I can throw some deep details on modern graphics technologies, which are normally hard to come by.  I use mostly Ubuntu so these are based on Ubuntu packages. Also the examples used here are mostly based on the bleeding edge versions, so please keep it in your mind so. I am using Intel Nuc with Kaby Lake for the hardware. Enjoy!
 
 
 
@@ -41,4 +41,14 @@ autoreconf -vfi
 
 make
 
+// WARNING! WARNING!
+// This will configure your system to use the newly built Mesa libraries. There is a significant
+// risk that your windows system can behave malfunctioning or even fail to come up.
 make install
+
+# Boot up!
+Now re-boot the system and wait for the window system to come up. To verify it has installed the Mesa build correctly, you can grep the Mesa version and compare to your source tree version.
+
+glxinfo | grep Mesa
+
+The version info for the Mesa source tree is under $your_mesa_location/VERSION. 

@@ -16,23 +16,28 @@ sudo apt-get install libxi-dev libxmu-dev x11proto-xf86vidmode-dev git-core auto
 
 I want the Intel ANV Vulkan driver to be build in Mesa and it requires LLVM. We need to install CLANG and LLVM packages.
 
+```
 sudo apt-get install llvm-3.9 llvm-3.9-dev clang-3.9 clang-3.9-dev libxvmc-dev libxcb-xvmc0-dev libvdpau-dev libomxil-bellagio-dev
 
 sudo ln -s /usr/bin/llvm-config-3.9 /usr/bin/llvm-config
+```
 
 # Build libdrm
 You can install libdrm package and let MESA build to grep it, but I find it is a lot easier just to get the libdrm source and build before hand.
-
+```
 git clone git://anongit.freedesktop.org/git/mesa/drm
 cd drm
 ./autogen.sh –prefix=/usr/local/xorg
 make
 sudo make install
 export PKG_CONFIG_PATH=/usr/local/xorg/lib/pkgconfig:$PKG_CONFIG_PATH
+```
 
 Here I am re-directing the install directory to /usr/local/xorg.
 
 # Build Mesa3D
+
+```
 git clone git://anongit.freedesktop.org/mesa/mesa
 cd mesa
 autoreconf -vfi
@@ -45,10 +50,10 @@ make
 // This will configure your system to use the newly built Mesa libraries. There is a significant
 // risk that your windows system can behave malfunctioning or even fail to come up.
 make install
-
+```
 # Boot up!
 Now re-boot the system and wait for the window system to come up. To verify it has installed the Mesa build correctly, you can grep the Mesa version and compare to your source tree version.
-
+```
 glxinfo | grep Mesa
-
+```
 The version info for the Mesa source tree is under $your_mesa_location/VERSION. 

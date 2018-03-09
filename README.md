@@ -1,10 +1,6 @@
 # Linux-Graphics-Full-Stack
 
-Hi There, 
-
-Here I am showing how to get and build the major Linux graphics software components. If you've wondered and wanted know more about modern graphics software stack, you've come to the right place. :) Along the way, hopefully I can throw some deep details on modern graphics technologies, which are normally hard to come by.  I use mostly Ubuntu so these are based on Ubuntu packages. Also the examples used here are mostly based on the bleeding edge versions, so please keep it in your mind so. I am using Intel Nuc with Kaby Lake for the hardware. Enjoy!
-
-
+Here I am showing how to get and build the major Linux graphics software components. These steps are based on Ubuntu. I am using Intel Nuc with Kaby Lake for them to run on. Please keep in mind that loading the graphics driver can break your system.
 
 # Get the latese Ubuntu installed
 Here is the Ubuntu link: https://www.ubuntu.com/download/desktop
